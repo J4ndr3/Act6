@@ -1,0 +1,33 @@
+<h1>Advanced Report Example</h1>
+<div>
+  <mat-form-field>
+    <mat-select [(value)]="selection">
+      <mat-option *ngFor="let option of options" [value]="option.id">{{option.text}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br><br>
+  <button mat-raised-button color="primary" (click)="submitRequest()">Generate</button>
+  <button mat-button color="acent" (click)="downloadRequest(1)">Download PDF</button>
+  <button mat-button color="acent" (click)="downloadRequest(2)">Download Word</button>
+</div>
+<div *ngIf="chart" class="reportChart">
+  <canvas id="canvas">{{ chart }}</canvas>
+</div>
+<div *ngIf="courses">
+  <div class="gradeTable">
+    <div *ngFor="let item of courses">
+      <table class="container">
+        <caption><strong>{{item.Title}}</strong>(Average:{{item.Average}})</caption>
+        <tr>
+          <th>Student</th>
+          <th>Grade</th>
+      </tr>
+      <tr *ngFor="let grade of item.StudentGrades">
+        <td>{{grade.Student}}</td>
+        <td>{{grade.Grade}}</td>
+      </tr>
+      </table>
+      <br><br>
+    </div>
+  </div>
+</div>
