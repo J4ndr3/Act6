@@ -1,8 +1,8 @@
 <h1>Advanced Report Example</h1>
 <div>
   <mat-form-field>
-    <mat-select [(value)]="selection">
-      <mat-option *ngFor="let option of options" [value]="option.id">{{option.text}}</mat-option>
+    <mat-select [(value)]="Selection">
+      <mat-option *ngFor="let option of options" [(value)]="option.id">{{option.text}}</mat-option>
     </mat-select>
   </mat-form-field>
   <br><br>
